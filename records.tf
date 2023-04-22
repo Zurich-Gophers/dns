@@ -29,3 +29,11 @@ resource "cloudflare_record" "www" {
   type    = "CNAME"
   proxied = true
 }
+
+
+resource "cloudflare_record" "github" {
+  zone_id = data.cloudflare_zones.dan.zones[0].id
+  name    = "_github-challenge-Zurich-Gophers-org"
+  value   = "f3558adb1b"
+  type    = "TXT"
+}

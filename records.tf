@@ -43,6 +43,13 @@ resource "cloudflare_record" "www" {
   proxied = true
 }
 
+resource "cloudflare_record" "zh" {
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
+  name    = "zh"
+  value   = "zurich-gophers.github.io"
+  type    = "CNAME"
+  proxied = true
+}
 
 resource "cloudflare_record" "github" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id

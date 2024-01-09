@@ -5,7 +5,7 @@ resource "cloudflare_zone_settings_override" "settings" {
 # https://registry.terraform.io/providers/cloudflare/cloudflare/latest/docs/resources/zone_settings_override
 # all the commented out settings are either read_only or do not allow me to edit them
 
-  zone_id = data.cloudflare_zones.dan.zones[0].id
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
   settings {
     always_online             = "on"
     always_use_https          = "on"

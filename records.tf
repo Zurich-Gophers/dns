@@ -1,4 +1,4 @@
-data "cloudflare_zones" "dan" {
+data "cloudflare_zones" "gophers" {
   filter {
     name        = "gophers.ch"
     lookup_type = "contains"
@@ -7,23 +7,36 @@ data "cloudflare_zones" "dan" {
 }
 
 resource "cloudflare_record" "one" {
-  zone_id = data.cloudflare_zones.dan.zones[0].id
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "@"
-  value   = "52.21.33.16"
+  value   = "185.199.108.153"
   type    = "A"
   proxied = true
 }
 
 resource "cloudflare_record" "two" {
-  zone_id = data.cloudflare_zones.dan.zones[0].id
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "@"
-  value   = "18.184.197.212"
+  value   = "185.199.109.153"
   type    = "A"
   proxied = true
 }
-
+resource "cloudflare_record" "three" {
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
+  name    = "@"
+  value   = "185.199.110.153"
+  type    = "A"
+  proxied = true
+}
+resource "cloudflare_record" "four" {
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
+  name    = "@"
+  value   = "185.199.111.153"
+  type    = "A"
+  proxied = true
+}
 resource "cloudflare_record" "www" {
-  zone_id = data.cloudflare_zones.dan.zones[0].id
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "www"
   value   = "gophers.ch"
   type    = "CNAME"
@@ -32,7 +45,7 @@ resource "cloudflare_record" "www" {
 
 
 resource "cloudflare_record" "github" {
-  zone_id = data.cloudflare_zones.dan.zones[0].id
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "_github-challenge-Zurich-Gophers-org"
   value   = "f3558adb1b"
   type    = "TXT"

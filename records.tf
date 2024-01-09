@@ -38,7 +38,7 @@ resource "cloudflare_record" "four" {
 resource "cloudflare_record" "www" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "www"
-  value   = "gophers.ch"
+  value   = "zurich-gophers.github.io"
   type    = "CNAME"
   proxied = true
 }

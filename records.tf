@@ -11,7 +11,7 @@ resource "cloudflare_record" "one" {
   name    = "@"
   value   = "185.199.108.153"
   type    = "A"
-  proxied = true
+  proxied = false
 }
 
 resource "cloudflare_record" "two" {
@@ -19,28 +19,28 @@ resource "cloudflare_record" "two" {
   name    = "@"
   value   = "185.199.109.153"
   type    = "A"
-  proxied = true
+  proxied = false
 }
 resource "cloudflare_record" "three" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "@"
   value   = "185.199.110.153"
   type    = "A"
-  proxied = true
+  proxied = false
 }
 resource "cloudflare_record" "four" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "@"
   value   = "185.199.111.153"
   type    = "A"
-  proxied = true
+  proxied = false
 }
 resource "cloudflare_record" "www" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "www"
   value   = "zurich-gophers.github.io"
   type    = "CNAME"
-  proxied = true
+  proxied = false
 }
 
 resource "cloudflare_record" "zh" {
@@ -48,7 +48,7 @@ resource "cloudflare_record" "zh" {
   name    = "zh"
   value   = "zurich-gophers.github.io"
   type    = "CNAME"
-  proxied = true
+  proxied = false
 }
 
 resource "cloudflare_record" "github" {

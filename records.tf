@@ -67,6 +67,22 @@ resource "cloudflare_record" "be" {
   proxied = false
 }
 
+resource "cloudflare_record" "berne" {
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
+  name    = "berne"
+  value   = "bernergo.github.io"
+  type    = "CNAME"
+  proxied = false
+}
+
+resource "cloudflare_record" "bern" {
+  zone_id = data.cloudflare_zones.gophers.zones[0].id
+  name    = "bern"
+  value   = "bernergo.github.io"
+  type    = "CNAME"
+  proxied = false
+}
+
 resource "cloudflare_record" "github" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "_github-challenge-Zurich-Gophers-org"

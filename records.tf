@@ -46,8 +46,8 @@ resource "cloudflare_record" "www" {
 resource "cloudflare_record" "bbs" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "bbs"
-  value   = "gobbs.switzerlandnorth.azurecontainer.io"
-  type    = "CNAME"
+  value   = "132.226.217.37"
+  type    = "A"
   proxied = false
 }
 

@@ -46,7 +46,7 @@ resource "cloudflare_record" "www" {
 resource "cloudflare_record" "bbs" {
   zone_id = data.cloudflare_zones.gophers.zones[0].id
   name    = "bbs"
-  value   = "132.226.217.37"
+  value   = "152.67.88.106"
   type    = "A"
   proxied = false
 }

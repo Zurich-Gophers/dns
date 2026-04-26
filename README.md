@@ -5,8 +5,7 @@ This repository manages the `gophers.ch` domain settings using terraform cloud.
 Run:
 ```bash
 terraform plan
-git commit
-git push
+terraform apply
 ```
 
 You need a `.auto.tfvars` file structured like this:
